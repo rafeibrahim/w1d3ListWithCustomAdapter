@@ -8,9 +8,9 @@
     <TextView
         android:id="@+id/presidentName"
         android:layout_width="0dp"
-        android:layout_height="28dp"
+        android:layout_height="19dp"
         android:layout_marginStart="3dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="9dp"
         android:text="TextView"
         app:layout_constraintBaseline_toBaselineOf="@+id/startDutyYear"
         app:layout_constraintEnd_toStartOf="@+id/startDutyYear"
@@ -18,10 +18,10 @@
 
     <TextView
         android:id="@+id/startDutyYear"
-        android:layout_width="0dp"
-        android:layout_height="24dp"
+        android:layout_width="55dp"
+        android:layout_height="19dp"
         android:layout_marginTop="96dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         app:layout_constraintEnd_toStartOf="@+id/endDutyYear"
         app:layout_constraintStart_toEndOf="@+id/presidentName"
@@ -29,9 +29,9 @@
 
     <TextView
         android:id="@+id/endDutyYear"
-        android:layout_width="0dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="54dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="16dp"
         android:text="TextView"
         app:layout_constraintBaseline_toBaselineOf="@+id/startDutyYear"
         app:layout_constraintEnd_toEndOf="parent"

@@ -8,16 +8,24 @@
 
     <TextView
         android:id="@+id/presidentTextView"
-        android:layout_width="412dp"
-        android:layout_height="79dp"
+        android:layout_width="407dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="2dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="2dp" />
+        app:layout_constraintBottom_toTopOf="@+id/presidentListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/presidentListView"
-        android:layout_width="409dp"
-        android:layout_height="649dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="81dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/presidentTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
