@@ -4,7 +4,7 @@ class President (var name: String,
                  var startDuty: Int,
                  var endDuty: Int,
                  var description: String,
-                 var hits: Int = 32464) : Comparable<President> {
+                 var hits: Int = 0) : Comparable<President> {
     override fun compareTo(other: President) : Int {
         return Integer.compare(this.startDuty, other.startDuty)
     }

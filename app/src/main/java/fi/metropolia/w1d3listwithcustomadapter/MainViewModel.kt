@@ -9,8 +9,7 @@ import kotlinx.coroutines.Dispatchers
 
 class WikiRepository() {
     private  val call = WikiApi.service
-
-    suspend fun hitCountCheck(name: String) = call.userName(name)
+    suspend fun getHitValue(name: String) = call.getHitCount(name)
 }
 
 class MainViewModel: ViewModel() {
@@ -20,7 +19,10 @@ class MainViewModel: ViewModel() {
     fun queryName(name: String) { query.value = name}
 
     val hitCount = query.switchMap {
-        liveData(Dispatchers.IO) { emit(repository.hitCountCheck(it)) }
+        liveData(Dispatchers.IO) {
+            val hits = repository.getHitValue(it)
+            emit(hits)
+        }
     }
 }
 

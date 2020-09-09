@@ -6,24 +6,24 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 object WikiApi {
-    const val URL = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=Trump"
+    const val URL =
+        "https://en.wikipedia.org"
 
     object ModelWiki {
-        data class Employee (
-            val name: String,
-            val email: String,
-            val address: EmployeeAddress
+        data class Result(
+            val query: Query
         )
-
-        data class EmployeeAddress (
-            val city: String,
-            val state: String
+        data class Query(
+            val searchinfo: Searchinfo
+        )
+        data class Searchinfo(
+            val totalhits: Int
         )
     }
 
     interface Service {
-        @GET("api.php")
-    suspend fun userName(@Query("name") action: String): ModelWiki.Employee
+        @GET("/w/api.php?action=query&format=json&list=search")
+    suspend fun getHitCount(@Query("srsearch") name: String): ModelWiki.Result
     }
 
     private val retrofit = Retrofit.Builder()
@@ -33,3 +33,4 @@ object WikiApi {
 
     val service = retrofit.create(Service::class.java)!!
 }
+
